@@ -1,1 +1,23 @@
-
+{
+  "name": "adf-metadata-driven-framework",
+  "location": "East US",
+  "identity": {
+    "type": "SystemAssigned"
+  },
+  "properties": {
+    "globalParameters": {
+      "environment": {
+        "type": "String",
+        "value": "DEV"
+      },
+      "rawContainer": {
+        "type": "String",
+        "value": "raw"
+      },
+      "curatedContainer": {
+        "type": "String",
+        "value": "curated"
+      }
+    }
+  }
+}
