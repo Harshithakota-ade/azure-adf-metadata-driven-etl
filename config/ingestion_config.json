@@ -1,1 +1,38 @@
-
+{
+  "pipeline_name": "pl_master_ingestion",
+  "description": "Metadata-driven ingestion configuration for Azure ADF framework",
+  "entities": [
+    {
+      "entity_name": "customers",
+      "source_type": "SQL",
+      "source_schema": "dbo",
+      "source_table": "Customers",
+      "target_schema": "dbo",
+      "target_table": "stg_customers",
+      "load_type": "INCREMENTAL",
+      "watermark_column": "LastModifiedDate",
+      "is_active": true
+    },
+    {
+      "entity_name": "orders",
+      "source_type": "SQL",
+      "source_schema": "dbo",
+      "source_table": "Orders",
+      "target_schema": "dbo",
+      "target_table": "stg_orders",
+      "load_type": "INCREMENTAL",
+      "watermark_column": "LastModifiedDate",
+      "is_active": true
+    },
+    {
+      "entity_name": "products",
+      "source_type": "FILE",
+      "source_path": "/landing/products/",
+      "target_schema": "dbo",
+      "target_table": "stg_products",
+      "load_type": "FULL",
+      "watermark_column": null,
+      "is_active": true
+    }
+  ]
+}
